@@ -1,18 +1,19 @@
 {
-    "name": "discord-py-snippets",
-    "displayName": "discord.py Code Snippets",
+    "name": "nextcord-snippets",
+    "displayName": "Nextcord Code Snippets",
     "description": "Code snippets for the discord.py package in python",
     "version": "1.5.2",
-    "publisher": "WasiMaster",
+    "publisher": "Nextcord",
     "repository": {
         "type": "git",
-        "url": "https://github.com/wasi-master/vscode-discord.py-snippets"
+        "url": "https://github.com/techpluscraft/nextcord-code-snippets"
     },
     "icon": "icon.png",
     "engines": {
         "vscode": "^0.10.0"
     },
     "keywords": [
+        "nextcord",
         "discord.py",
         "discord.js",
         "discord",

@@ -2,7 +2,7 @@
 
 # What is discord-py-snippets
 
-A simple snippets extension for the [discord.py](https://discordpy.readthedocs.io/en/latest/ "discord.py Documentation") package for [python](https://www.python.org "python.org")
+A simple snippets extension for the [nextcord](https://nextcord.readthedocs.io/en/latest/ "Nextcord Documentation") package for [python](https://www.python.org "python.org")
 
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=WasiMaster.discord-py-snippets">
