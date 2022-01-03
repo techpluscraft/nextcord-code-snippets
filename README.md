@@ -1,5 +1,4 @@
-# Fork notice this is a fork from discord-py-code-snippets to make it compatible for nextcord
-
+# Fork notice this is a fork from discord-py-code-snippets to make it compatible for nextcord.
 # What is discord-py-snippets
 
 A simple snippets extension for the [nextcord](https://nextcord.readthedocs.io/en/latest/ "Nextcord Documentation") package for [python](https://www.python.org "python.org")
