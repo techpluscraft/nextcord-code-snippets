@@ -1,0 +1,38 @@
+{
+    "name": "discord-py-snippets",
+    "displayName": "discord.py Code Snippets",
+    "description": "Code snippets for the discord.py package in python",
+    "version": "1.5.2",
+    "publisher": "WasiMaster",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wasi-master/vscode-discord.py-snippets"
+    },
+    "icon": "icon.png",
+    "engines": {
+        "vscode": "^0.10.0"
+    },
+    "keywords": [
+        "discord.py",
+        "discord.js",
+        "discord",
+        "JDA",
+        "discord bot",
+        "discord snippets",
+        "discord.py snippets",
+        "discord.js snippets",
+        "discord.py code snippets",
+        "discord.js code snippets"
+    ],
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "python",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

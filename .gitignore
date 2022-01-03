@@ -1,0 +1,11 @@
+# VSIX File
+*.vsix
+
+# vscode history folder
+.history/
+
+# vscode settings folder
+.vscode/
+
+# .py files used for testing
+*.py

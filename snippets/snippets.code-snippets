@@ -1,0 +1,311 @@
+{
+    "discord.py Starter Template": {
+        "prefix": "!dpstrt",
+        "body": [
+            "import discord",
+            "from discord.ext import commands",
+            "",
+            "",
+            "bot = commands.Bot(command_prefix=\"${1:!}\")",
+            "",
+            "",
+            "@bot.event",
+            "async def on_ready():",
+            "    print(f\"Logged in as {bot.user}\")",
+            "",
+            "",
+            "@bot.command()",
+            "async def hello(ctx):",
+            "    await ctx.send(\"Hello, I am a robot\")",
+            "",
+            "bot.run(\"${2:Token}\")",
+            ""
+        ],
+        "description": "A starter template"
+    },
+    "discord.py Basic Command Template": {
+        "prefix": "!cmd",
+        "body": [
+            "@${1|bot,client|}.command(${2:aliases=[\"$3\"]})",
+            "async def ${4:command_name}(ctx$5):",
+            "    await ctx.send(\"$0\")"
+        ],
+        "description": "A basic command template (Not for cogs)"
+    },
+    "discord.py Not Shadowing Command Template": {
+        "prefix": "!unscmd",
+        "body": [
+            "@${1|bot,client|}.command(name=\"${2:command_name}\"${3:, aliases=[\"$4\"]})",
+            "async def _${2:command_name}(ctx$5):",
+            "    await ctx.send(\"$0\")"
+        ],
+        "description": "A basic command template that doesn't shadow another function (Not for cogs)"
+    },
+    "discord.py Basic Event Template": {
+        "prefix": "!evt",
+        "body": [
+            "@${1|bot,client|}.event",
+            "async def on_$2($3):",
+            "    $0"
+        ],
+        "description": "A basic event template (Not for cogs)"
+    },
+    "discord.py Cog Command Template": {
+        "prefix": "!cgcmd",
+        "body": [
+            "@commands.command(${1:aliases=[\"$2\"]})",
+            "async def ${3:command_name}(self, ctx$4):",
+            "    await ctx.send(\"$0\")"
+        ],
+        "description": "A basic command template for cogs"
+    },
+    "discord.py Cog Not Shadowing Command Template": {
+        "prefix": "!cgunscmd",
+        "body": [
+            "@commands.command(name=\"${1:command_name}\"${2:, aliases=[\"$3\"]})",
+            "async def _${1:command_name}(self, ctx$4):",
+            "    await ctx.send(\"$0\")"
+        ],
+        "description": "A basic command template that doesn't shadow another function for cogs"
+    },
+    "discord.py Cog Event Template": {
+        "prefix": "!cgevt",
+        "body": [
+            "@commands.Cog.listener()",
+            "async def on_$1(self, $2):",
+            "    $0"
+        ],
+        "description": "A basic event template for cogs"
+    },
+    "discord.py Cog Template": {
+        "prefix": "!cog",
+        "body": [
+            "import discord",
+            "from discord.ext import commands",
+            "",
+            "",
+            "class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}(commands.Cog):",
+            "    def __init__(self, bot):",
+            "        self.bot = bot",
+            "",
+            "    $0",
+            "",
+            "def setup(bot):",
+            "    bot.add_cog(${1:CogName}(bot))",
+            ""
+        ],
+        "description": "A starter template for a cog"
+    },
+    "discord.py Group Template": {
+        "prefix": "!grp",
+        "body": [
+            "@${1|bot,client,commands|}.group(invoke_without_subcommnads=True${3:, aliases=[\"$4\"]})",
+            "async def ${2:group_name}(self, ctx$11):",
+            "    await ctx.send(\"$0\")",
+            "",
+            "",
+            "@${2:group_name}.command(name=\"${5:subcommand_name}\"${6:, aliases=[\"$7\"]})",
+            "async def $2_${5:subcommand_name}(self, ctx$12):",
+            "    await ctx.send(\"\")",
+            "",
+            "",
+            "@${2:group_name}.command(name=\"${8:subcommand_name}\"${9:, aliases=[\"$10\"]})",
+            "async def $2_${8:subcommand_name}(self, ctx$13):",
+            "    await ctx.send(\"\")"
+        ],
+        "description": "A group template"
+    },
+    "discord.py Group Command Template": {
+        "prefix": "!grpcmd",
+        "body": [
+            "@${1:group_name}.command(name=\"${2:subcommand_name}\"${3:, aliases=[\"$4\"]})",
+            "async def $1_${2:subcommand_name}(self, ctx$5):",
+            "    await ctx.send(\"$0\")"
+        ],
+        "description": "A group command template that is meant to add more commands to a group"
+    },
+    "aiohttp Basic Usage Template": {
+        "prefix": "!ahtp",
+        "body": [
+            "async with ${1|bot,client,self.bot,self.client|}.session.get(\"$2\") as r:",
+            "    resp = await r.json()",
+            "    $0"
+        ],
+        "description": "You need to have bot.session defined as a instance of aiohttp.ClientSession"
+    },
+    "discord.py Global Check Template": {
+        "prefix": "!gbchk",
+        "body": [
+            "@${1|bot,client|}.check",
+            "async def ${2:bot_check}(ctx):",
+            "    $0"
+        ],
+        "description": "A basic global check template"
+    },
+    "discord.py Cog Check Template": {
+        "prefix": "!cgchk",
+        "body": [
+            "async def cog_check(self, ctx):",
+            "    $0",
+            "    if $1:",
+            "        return True",
+            "    else:",
+            "        return False",
+        ],
+        "description": "A basic cog check template"
+    },
+    "discord.py Embed Help": {
+        "prefix": "!embedhelp",
+        "body": [
+            "class ${1:MyNew}Help(commands.MinimalHelpCommand):",
+            "   async def send_pages(self):",
+            "       destination = self.get_destination()",
+            "       for page in self.paginator.pages:",
+            "           embed = discord.Embed(description=page)",
+            "           await destination.send(embed=embed)"
+        ],
+        "description": "A custom help command implementation that modifies the default help and uses embed"
+    },
+    "discord.py Embed Template": {
+        "prefix": "!emb",
+        "body": [
+            "embed = discord.Embed(${1:title=\"$2\",} ${3:description=\"$4\",} ${5:color=$6,} ${7:timestamp=$8,})"
+        ],
+        "description": "Makes a Embed"
+    },
+    "discord.py Embed Field Template": {
+        "prefix": "!embfield",
+        "body": [
+            "${1:embed}.add_field(name=\"$2\", value=\"$3\", inline=${4|True,False|})"
+        ],
+        "description": "Adds a field to a embed"
+    },
+    "discord.py Embed Footer Template": {
+        "prefix": "!embfoot",
+        "body": [
+            "${1:embed}.set_footer(text=\"$2\", ${3:icon_url=\"${4}\"})"
+        ],
+        "description": "Adds a footer to a embed"
+    },
+    "discord.py Embed Author Template": {
+        "prefix": "!embauthor",
+        "body": [
+            "${1:embed}.set_author(name=\"$2\", ${3:url=\"${4}\",} ${5:icon_url=\"${6}\"})"
+        ],
+        "description": "Adds a author to a embed"
+    },
+    "discord.py Embed Thumbnail Template": {
+        "prefix": "!embthumb",
+        "body": [
+            "${1:embed}.set_thumbnail(url=\"$2\")"
+        ]
+    },
+    "discord.py Embed Image Template": {
+        "prefix": "!embimg",
+        "body": [
+            "${1:embed}.set_image(url=\"$2\")"
+        ]
+    },
+    "discord.py Owner Only check template": {
+        "prefix": "!owneronly",
+        "body": [
+            "@commands.is_owner()"
+        ]
+    },
+    "discord.py NSFW Only check template": {
+        "prefix": "!nsfwonly",
+        "body": [
+            "@commands.is_nsfw()"
+        ]
+    },
+    "discord.py Cooldown decorator template": {
+        "prefix": "!cooldown",
+        "body": [
+            "@commands.cooldown(${1:rate}, ${2:per}, commands.BucketType.${4|user,default,channel,member,guild,category,role|})"
+        ]
+    },
+    "discord.py has_permissions template": {
+        "prefix": "!hasperms",
+        "body": [
+            "@commands.has_permissions(${1:permission_name}=True)"
+        ]
+    },
+    "discord.py wait_for template for on_reaction_add": {
+        "prefix": "!waitforreaction",
+        "body": [
+            "try:",
+            "    reaction, user = await ${1|bot,client,self.bot,self.client|}.wait_for('reaction_add', check=lambda r, u: ${2:u == ctx.author and r.message.channel.id == ctx.channel.id}, timeout=${3|15,30,45,60,120,300,900|})",
+            "except asyncio.TimeoutError:",
+            "    return await ctx.send(\"You didn't respond\")",
+            "else:",
+            "    $0"
+        ]
+    },
+
+    "discord.py wait_for template for on_message": {
+        "prefix": "!waitformessage",
+        "body": [
+            "try:",
+            "    message = await ${1|bot,client,self.bot,self.client|}.wait_for('message', check=lambda m: ${2:m.author == ctx.author and m.channel.id == ctx.channel.id}, timeout=${3|15,30,45,60,120,300,900|})",
+            "except asyncio.TimeoutError:",
+            "    return await ctx.send(\"You didn't respond\")",
+            "else:",
+            "    $0"
+        ]
+    },
+
+    "discord.py Exception":{
+		"prefix": "!except",
+		"body": [
+			"class ${1:My}Error(${2:CommandError}):",
+			"   \"\"\"${3:Error Description}\"\"\"",
+			"",
+			"   pass"
+		],
+        "description": "Add a basic exception."
+	},
+
+	"discord.py UI Button":{
+		"prefix": "!button",
+		"body": [
+			"class ${1:My}Button(discord.ui.Button):",
+			"",
+			"    async def callback(self, interaction: discord.Interaction):",
+			"        ${2:return await super().callback(interaction)}"
+		],
+        "description": "Add a basic button."
+	},
+
+
+    "discord.py Custom UI Button":{
+		"prefix": "!cbutton",
+		"body": [
+			"class ${1:My}Button(discord.ui.Button):",
+			"",
+            "    def __init__(self, *, style: ButtonStyle = ..., label: Optional[str] = None,",
+            "                disabled: bool = False, custom_id: Optional[str] = None,",
+            "                url: Optional[str] = None, emoji: Optional[Union[str, Emoji, PartialEmoji]] = None,",
+            "                row: Optional[int] = None, ${2:argname}: ${3:_type}):",
+            "        super().__init__(style=style, label=label, disabled=disabled,",
+            "                        custom_id=custom_id, url=url, emoji=emoji, row=row, $2=$2)",
+            "",
+			"    async def callback(self, interaction: discord.Interaction):",
+			"        ${4:return await super().callback(interaction)}",
+			"        $0"
+		],
+        "description": "Add a button with a custom constructor.."
+	},
+
+	"discord.py UI Select":{
+		"prefix": "!select",
+		"body": [
+			"class ${1:My}Select(discord.ui.Select):",
+			"",
+			"   async def callback(self, interaction: discord.Interaction):",
+			"       ${2:return await super().callback(interaction)}"
+		],
+        "description": "Add a basic select."
+	},
+
+}
+
