@@ -9,3 +9,6 @@
 
 # .py files used for testing
 *.py
+
+# secrets
+secrets.yml
