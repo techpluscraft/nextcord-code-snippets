@@ -1,6 +1,3 @@
-# VSIX File
-*.vsix
-
 # vscode history folder
 .history/
 
