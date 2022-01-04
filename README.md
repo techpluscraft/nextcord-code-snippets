@@ -188,6 +188,10 @@ I suggest seeing the [vscode snippets documentation](https://code.visualstudio.c
 
 - Made it work
 
+### 1.5.4
+
+- v0 to v1
+
 ### Extensions in the screenshots
 
 - [Monokai Pro](https://marketplace.visualstudio.com/items?itemName=monokai.theme-monokai-pro-vscode) by [monokai](https://marketplace.visualstudio.com/publishers/monokai)

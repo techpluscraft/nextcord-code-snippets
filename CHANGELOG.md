@@ -70,3 +70,7 @@ All notable changes to the "discord-py-snippets" extension will be documented in
 ### [1.5.3]
 
 - Made it work
+
+### [1.5.4]
+
+- v0 to v1
