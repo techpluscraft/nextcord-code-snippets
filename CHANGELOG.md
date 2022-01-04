@@ -66,3 +66,7 @@ All notable changes to the "discord-py-snippets" extension will be documented in
 ### [1.5.1]
 
 - Added a `on_ready` event in the `!dpstrt` snippet
+
+### [1.5.3]
+
+- Made it work
